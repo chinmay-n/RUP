@@ -54,7 +54,7 @@ public class Central extends java.awt.Frame {
         });
         jPanel1.add(jButton1);
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Update Absent");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -62,7 +62,12 @@ public class Central extends java.awt.Frame {
         });
         jPanel1.add(jButton2);
 
-        jButton3.setText("jButton3");
+        jButton3.setText("Notice");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
 
         jButton4.setText("jButton4");
@@ -121,6 +126,15 @@ public class Central extends java.awt.Frame {
                   f.setVisible(true);
                   this.setEnabled(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+                  this.setEnabled(false);
+                  Notices f=null;     
+                  f = new Notices();
+                  f.setVisible(true);
+                  this.setEnabled(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
