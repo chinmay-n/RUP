@@ -20,7 +20,7 @@ public class Central extends java.awt.Frame {
      */
     public Central() {
         initComponents();
-        this.jButton7.setVisible(false);
+       // this.jButton7.setVisible(false);
 
     }
 
