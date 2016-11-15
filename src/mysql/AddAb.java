@@ -5,6 +5,7 @@
  */
 package mysql;
 
+import java.awt.*;
 import java.sql.*;
 import java.sql.Statement;
 import java.text.ParseException;
@@ -41,6 +42,7 @@ public class AddAb extends javax.swing.JFrame {
 }
     public AddAb() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
     
     /**
@@ -64,6 +66,11 @@ public class AddAb extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Absent Status Change");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setText("Student ID");
 
@@ -79,7 +86,7 @@ public class AddAb extends javax.swing.JFrame {
 
         jLabel3.setText("Date");
 
-        jButton2.setText("Add Absent");
+        jButton2.setText("Remove Absent");
         jButton2.setToolTipText("");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,7 +120,7 @@ public class AddAb extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addComponent(jLabel3)))))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -180,15 +187,16 @@ public class AddAb extends javax.swing.JFrame {
           return;
         }
         sid=jTextField1.getText();
-        if(sid==null){
+        if(sid.equals("")){
             JOptionPane.showMessageDialog(this, "Invalid Student No.");
+            return;
         }
         try {
             // TODO add your handling code here:
             if(!a.status)
             { a.init();}
             stmnt = a.myConnection.createStatement();
-            sql = "delete from absent where sid="+sid+ "and sdate="+date;
+            sql = "delete from absent where sid='"+sid+ "'and sdate='"+date+"'";
             PreparedStatement p=a.myConnection.prepareStatement(sql);
             p.execute();
         } catch (SQLException ex) {
@@ -196,6 +204,12 @@ public class AddAb extends javax.swing.JFrame {
         }
         JOptionPane.showMessageDialog(this,"Student "+sid+" has been unmarked absent for "+date);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        a.destroy();
+        this.dispose();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
