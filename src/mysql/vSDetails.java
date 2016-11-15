@@ -5,12 +5,19 @@
  */
 package mysql;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author chinmay
  */
 public class vSDetails extends java.awt.Frame {
-
+    ResultSet rs;
+    MyDBConnection a= new MyDBConnection();
     /**
      * Creates new form vSDetails
      */
@@ -180,11 +187,68 @@ public class vSDetails extends java.awt.Frame {
      * Exit the Application
      */
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
-        System.exit(0);
+        a.destroy();
+        this.dispose();
     }//GEN-LAST:event_exitForm
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        try {                                         
+            // TODO add your handling code here:
+            String sid=jTextField1.getText();
+            if(sid.equals("")){
+            JOptionPane.showMessageDialog(this, "Please Enter Student ID");
+            return;
+        }
+            if(!a.status)
+                a.init();
+            java.sql.Statement stmt = a.myConnection.createStatement();
+            String sql;
+            sql = "SELECT * from student where sid='"+sid+"'";
+            try {
+                this.rs = stmt.executeQuery(sql);
+            } catch (SQLException ex) {
+                Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            String tmp=rs.getString("hostelno");
+        } catch (SQLException ex) {
+            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         jTextField5.setText(this.rs.getString(tmp));
+//        try {
+//            jTextField4.setText(this.rs.getString("name"));
+//        } catch (SQLException ex) {
+//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            jTextField5.setText(this.rs.getString("phone_no"));
+//        } catch (SQLException ex) {
+//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            jTextField3.setText(this.rs.getString("pname"));
+//        } catch (SQLException ex) {
+//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            jTextField6.setText(this.rs.getString("pphone_no"));
+//        } catch (SQLException ex) {
+//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            jTextField8.setText(this.rs.getString("email_id"));
+//        } catch (SQLException ex) {
+//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        try {
+//            jTextField9.setText(this.rs.getString("pemail_id"));
+//        } catch (SQLException ex) {
+//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -31,13 +31,13 @@ public class Central extends java.awt.Frame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -45,22 +45,19 @@ public class Central extends java.awt.Frame {
             }
         });
 
-        jButton1.setText("Absent Status");
-        jButton1.setToolTipText("");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton5.setText("Student Details");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
+        jPanel1.add(jButton5);
 
-        jButton2.setText("Update Absent");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2);
+        jButton6.setText("jButton6");
+        jPanel1.add(jButton6);
+
+        jButton7.setText("jButton7");
+        jPanel1.add(jButton7);
 
         jButton3.setText("Add Notice");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -78,14 +75,22 @@ public class Central extends java.awt.Frame {
         });
         jPanel1.add(jButton4);
 
-        jButton5.setText("jButton5");
-        jPanel1.add(jButton5);
+        jButton2.setText("Update Absent");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
 
-        jButton6.setText("jButton6");
-        jPanel1.add(jButton6);
-
-        jButton7.setText("jButton7");
-        jPanel1.add(jButton7);
+        jButton1.setText("Absent Status");
+        jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -149,6 +154,15 @@ public class Central extends java.awt.Frame {
                   f.setVisible(true);
                   this.setEnabled(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        this.setEnabled(false);
+        vSDetails f=null;     
+                  f = new vSDetails();
+                  f.setVisible(true);
+                  this.setEnabled(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -45,7 +45,7 @@ public class Ab extends java.awt.Frame {
     }
     public void exec(String s) throws SQLException {   
       if(!a.status)
-      { a.init();}
+          a.init();
       java.sql.Statement stmt = a.myConnection.createStatement();
       String sql;
       sql = "SELECT * from absent where sdate='"+s+"'";
