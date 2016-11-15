@@ -41,11 +41,7 @@ public class mysql {
 //        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new Ab().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(mysql.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new Central().setVisible(true);
             }
         });
         

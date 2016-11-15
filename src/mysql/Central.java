@@ -5,6 +5,10 @@
  */
 package mysql;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author chinmay
@@ -41,10 +45,21 @@ public class Central extends java.awt.Frame {
             }
         });
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Absent Status");
+        jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
 
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
 
         jButton3.setText("jButton3");
@@ -84,6 +99,28 @@ public class Central extends java.awt.Frame {
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
         System.exit(0);
     }//GEN-LAST:event_exitForm
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+                  this.setEnabled(false);
+                  Ab f=null;     
+        try {
+            f = new Ab();
+        } catch (SQLException ex) {
+            Logger.getLogger(Central.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                  f.setVisible(true);
+                  this.setEnabled(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+                  this.setEnabled(false);
+                  AddAb f=null;     
+                  f = new AddAb();
+                  f.setVisible(true);
+                  this.setEnabled(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

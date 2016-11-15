@@ -38,7 +38,7 @@ public class Ab extends java.awt.Frame {
     public Ab() throws SQLException {
         initComponents();
          this.setSize(400,400);
-        MyDBConnection a= new MyDBConnection();
+      //  MyDBConnection a= new MyDBConnection();
         jButton1.setVisible(false);
         //a.init();
         //this.exec(null);
@@ -66,6 +66,7 @@ public class Ab extends java.awt.Frame {
         jTextField3 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
 
+        setTitle("Absent Status");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
@@ -81,7 +82,7 @@ public class Ab extends java.awt.Frame {
 
         jTextField3.setText("yyyy-mm-dd");
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Set Date");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -130,7 +131,8 @@ public class Ab extends java.awt.Frame {
      * Exit the Application
      */
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
-        System.exit(0);
+        a.destroy();
+        this.dispose();
     }//GEN-LAST:event_exitForm
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
