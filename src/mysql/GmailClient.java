@@ -29,8 +29,8 @@ import javax.swing.JOptionPane;
  
 public class GmailClient {
  
-    private String userName="chinmayn96@gmail.com";
-    private String password="bloodrunner";
+    private String userName="hostel.rup.project@gmail.com";
+    private String password="projectacc";
     private String sendingHost;
     private int sendingPort;
     private String from;
@@ -39,21 +39,21 @@ public class GmailClient {
     private String text;
     private String receivingHost;
    
-    static String mailTo=new String("chinmayn96@gmail.com");
+    static String mailTo=new String("hostel.rup.project@gmail.com");
  
     static String mailSubject=new String("Testing Mail");
  
     static   String mailText=new String("Have an Nice Day ...........!!!");
     
-    String senderPassword=new String("bloodrunner");
+    String senderPassword=new String("projectacc");
  
-    String senderUserName=new String("chinmayn96@gmail.com");
+    String senderUserName=new String("hostel.rup.project@gmail.com");
 //    private int receivingPort;
  
     public void setAccountDetails(String userName,String password){
  
-        this.userName="chinmayn96@gmail.com";//sender's email can also use as User Name
-        this.password="bloodrunner";
+        this.userName="hostel.rup.project@gmail.com";//sender's email can also use as User Name
+        this.password="projectacc";
  
     }
  
