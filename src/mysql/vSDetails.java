@@ -206,6 +206,7 @@ public class vSDetails extends java.awt.Frame {
             sql = "SELECT * from student where sid='"+sid+"'";
             try {
                 this.rs = stmt.executeQuery(sql);
+                rs.next();
             } catch (SQLException ex) {
                 Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -213,41 +214,40 @@ public class vSDetails extends java.awt.Frame {
             Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            String tmp=rs.getString("hostelno");
+            jTextField7.setText(this.rs.getString("hostelno"));
         } catch (SQLException ex) {
             Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
         }
-         jTextField5.setText(this.rs.getString(tmp));
-//        try {
-//            jTextField4.setText(this.rs.getString("name"));
-//        } catch (SQLException ex) {
-//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        try {
-//            jTextField5.setText(this.rs.getString("phone_no"));
-//        } catch (SQLException ex) {
-//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        try {
-//            jTextField3.setText(this.rs.getString("pname"));
-//        } catch (SQLException ex) {
-//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        try {
-//            jTextField6.setText(this.rs.getString("pphone_no"));
-//        } catch (SQLException ex) {
-//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        try {
-//            jTextField8.setText(this.rs.getString("email_id"));
-//        } catch (SQLException ex) {
-//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        try {
-//            jTextField9.setText(this.rs.getString("pemail_id"));
-//        } catch (SQLException ex) {
-//            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        try {
+            jTextField4.setText(this.rs.getString("name"));
+        } catch (SQLException ex) {
+            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            jTextField5.setText(this.rs.getString("phone_no"));
+        } catch (SQLException ex) {
+            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            jTextField3.setText(this.rs.getString("pname"));
+        } catch (SQLException ex) {
+            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            jTextField6.setText(this.rs.getString("pphone_no"));
+        } catch (SQLException ex) {
+            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            jTextField8.setText(this.rs.getString("email_id"));
+        } catch (SQLException ex) {
+            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            jTextField9.setText(this.rs.getString("pemail_id"));
+        } catch (SQLException ex) {
+            Logger.getLogger(vSDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
