@@ -29,8 +29,8 @@ import javax.swing.JOptionPane;
  
 public class GmailClient {
  
-    private String userName;
-    private String password;
+    private String userName="chinmayn96@gmail.com";
+    private String password="bloodrunner";
     private String sendingHost;
     private int sendingPort;
     private String from;
@@ -187,7 +187,7 @@ public class GmailClient {
  
     }
     
-    public void recvData(String email,String name,String body){
+   public void dClient(String email,String name,String body){
         mailTo=email;
  
     mailSubject=name;
@@ -200,14 +200,11 @@ public class GmailClient {
         
  
         //Mention your email subject and content
- 
+        
        
  
         //Create a GmailClient object
- 
-        GmailClient newGmailClient=new GmailClient();
-        newGmailClient.sendGmail("chinmayn96@gmail.com", mailTo, mailSubject, mailText);
- 
+                
         //Receive mails
  
         //newGmailClient.readGmail();

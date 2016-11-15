@@ -56,6 +56,11 @@ public class Central extends java.awt.Frame {
         jPanel1.add(jButton5);
 
         jButton6.setText("jButton6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton6);
 
         jButton7.setText("jButton7");
@@ -165,6 +170,14 @@ public class Central extends java.awt.Frame {
                   f.setVisible(true);
                   this.setEnabled(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        this.setEnabled(false);
+        qEmail q=new qEmail();
+        q.main();
+        this.setEnabled(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
