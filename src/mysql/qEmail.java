@@ -20,14 +20,14 @@ public class qEmail {
     static MyDBConnection a= new MyDBConnection();
     static ArrayList<String[]> AL,AL2;
     static String sql;
+    static java.sql.Statement stmt;
     
-    
-    public static void main(){
+    public static void main() throws SQLException{
        
         try {
             if(!a.status)
                 a.init();
-            java.sql.Statement stmt = a.myConnection.createStatement();
+             stmt = a.myConnection.createStatement();
             
             sql = "SELECT sid from el where cnt>=3";
             qEmail.rs = stmt.executeQuery(sql);
